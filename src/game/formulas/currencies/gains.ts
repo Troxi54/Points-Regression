@@ -18,6 +18,7 @@ import cappergyConfig from "@game/features/cappergy/config";
 import nuxarConfig from "@game/features/nuxar/config";
 import { calculateCurrencyGain } from "@game/currencies/utils/calculate";
 import formulas from "../data";
+import formulaConfig from "../config";
 
 const currencyGainFormulas: GainFormulaContainer = {
   points: {
@@ -25,7 +26,8 @@ const currencyGainFormulas: GainFormulaContainer = {
       return cachedPlayer.runEffect
         .multiply(cachedPlayer.bestPointsOfRunEffect)
         .multiply(cachedPlayer.tierEffect)
-        .multiply(cachedPlayer.bestVermytesPointsEffect);
+        .multiply(cachedPlayer.bestVermytesPointsEffect)
+        .multiply(formulaConfig.globalMultiplier);
     },
   },
   madeTierTimes: {
@@ -36,12 +38,16 @@ const currencyGainFormulas: GainFormulaContainer = {
       return createDecimal(1).multiply(nullionEffect);
     },
     passiveGain: (_, gain) => {
-      return gain.multiply(resetLayerConfig.maxResetsPerSecond);
+      return gain
+        .multiply(resetLayerConfig.maxResetsPerSecond)
+        .multiply(formulaConfig.globalMultiplier);
     },
   },
   ampliflux: {
     gain({ cachedPlayer }) {
-      return cachedPlayer.amplivaultEffect;
+      return cachedPlayer.amplivaultEffect.multiply(
+        formulaConfig.globalMultiplier,
+      );
     },
   },
   vermytes: {
@@ -60,26 +66,26 @@ const currencyGainFormulas: GainFormulaContainer = {
     },
     passiveGain({ player }) {
       const multiplier = calculateGeneration([
-        [hasUpgradeById(player, "vermyros_7"), 100],
-        [hasUpgradeById(player, "vermyros_6"), 10],
-        [hasUpgradeById(player, "vermyros_5"), 1],
-        [hasUpgradeById(player, "vermyros_4"), 0.1],
+        [hasUpgradeById(player, "vermyros_7"), 10],
+        [hasUpgradeById(player, "vermyros_6"), 1],
+        [hasUpgradeById(player, "vermyros_5"), 0.1],
+        [hasUpgradeById(player, "vermyros_4"), 0.01],
       ]);
       return player.bestVermytes.multiply(multiplier);
     },
   },
   vermora: {
     gain({ cachedPlayer }) {
-      return cachedPlayer.bestVermytesEffect.multiply(
-        cachedPlayer.bestPointsOfRunVermoraEffect,
-      );
+      return cachedPlayer.bestVermytesEffect
+        .multiply(cachedPlayer.bestPointsOfRunVermoraEffect)
+        .multiply(formulaConfig.globalMultiplier);
     },
   },
   energyReactors() {
-    return createDecimal(1);
+    return createDecimal(1).multiply(formulaConfig.globalMultiplier);
   },
   energy() {
-    return createDecimal(1);
+    return createDecimal(1).multiply(formulaConfig.globalMultiplier);
   },
   cores: {
     gain({ player }) {
@@ -92,10 +98,10 @@ const currencyGainFormulas: GainFormulaContainer = {
     },
     passiveGain({ player }, gain) {
       const multiplier = calculateGeneration([
-        [hasUpgradeById(player, "nullith_6"), 100],
-        [hasUpgradeById(player, "nullith_5"), 10],
-        [hasUpgradeById(player, "nullith_4"), 1],
-        [hasUpgradeById(player, "nullith_3"), 0.1],
+        [hasUpgradeById(player, "nullith_6"), 10],
+        [hasUpgradeById(player, "nullith_5"), 1],
+        [hasUpgradeById(player, "nullith_4"), 0.1],
+        [hasUpgradeById(player, "nullith_3"), 0.01],
       ]);
 
       return gain.multiply(multiplier);
@@ -106,7 +112,9 @@ const currencyGainFormulas: GainFormulaContainer = {
       return Decimal.pow(
         2,
         player.points.dividedBy(1e250).max(0).plus(1).log(1e10),
-      ).max(1);
+      )
+        .max(1)
+        .multiply(formulaConfig.globalMultiplier);
     },
   },
   madeNullithResets: {
@@ -114,7 +122,9 @@ const currencyGainFormulas: GainFormulaContainer = {
       return createDecimal(1);
     },
     passiveGain: (_, gain) => {
-      return gain.multiply(resetLayerConfig.maxResetsPerSecond);
+      return gain
+        .multiply(resetLayerConfig.maxResetsPerSecond)
+        .multiply(formulaConfig.globalMultiplier);
     },
   },
   nullions: {
@@ -161,7 +171,8 @@ const currencyGainFormulas: GainFormulaContainer = {
         )
         .multiply(hasUpgradeById(player, "dertoint_3") ? nullionEffect : 1)
         .multiply(cachedPlayer.levelDertointEffect)
-        .multiply(cachedPlayer.runDertointEffect);
+        .multiply(cachedPlayer.runDertointEffect)
+        .multiply(formulaConfig.globalMultiplier);
     },
   },
   mallirtTotalDertoints: {
@@ -176,11 +187,11 @@ const currencyGainFormulas: GainFormulaContainer = {
     },
     passiveGain: ({ player }, gain) => {
       const multiplier = calculateGeneration([
-        [hasUpgradeById(player, "level_6"), 100],
-        [hasUpgradeById(player, "level_5"), 10],
-        [hasUpgradeById(player, "level_4"), 1],
-        [hasUpgradeById(player, "level_3"), 0.1],
-        [hasUpgradeById(player, "level_2"), 0.01],
+        [hasUpgradeById(player, "level_6"), 10],
+        [hasUpgradeById(player, "level_5"), 1],
+        [hasUpgradeById(player, "level_4"), 0.1],
+        [hasUpgradeById(player, "level_3"), 0.01],
+        [hasUpgradeById(player, "level_2"), 0.001],
       ]);
 
       return gain.multiply(multiplier);

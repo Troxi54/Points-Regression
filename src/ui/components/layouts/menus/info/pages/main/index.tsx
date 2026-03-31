@@ -14,7 +14,7 @@ function MenuInfoMainPage() {
     <>
       <h1 className="m-0">{gameConfig.gameName}</h1>
       <p>
-        This is a slow-paced game designed to last over a month. New features
+        This is a slow-paced game designed to last over a year (?). New features
         unlock gradually as you progress.
       </p>
       <p>Before you start, there are a few important things to know:</p>

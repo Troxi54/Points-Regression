@@ -5,6 +5,7 @@ import createDecimal, { decimalSoftcap } from "@core/utils/decimal";
 import { getCachedCurrencyProp } from "@game/currencies/utils/get";
 import effectFormulas from "../effects";
 import { isXagyrosStateActive } from "@game/features/xagyrosStates/utils/get";
+import formulaConfig from "../config";
 
 const currencyEffectFormulas: EffectFormulaContainer = {
   points({ player: { points } }) {
@@ -172,10 +173,16 @@ const currencyEffectFormulas: EffectFormulaContainer = {
         1,
         Decimal.pow(2, score.max(0).plus(1).log10().dividedBy(200)),
       ),
-    ).clamp(0, 1);
+    )
+      .clamp(0, 1)
+      .multiply(formulaConfig.globalMultiplier);
   },
   amplivoid({ player: { amplivoid } }) {
-    return amplivoid.max(0).plus(1).pow(1.75);
+    return amplivoid
+      .max(0)
+      .plus(1)
+      .pow(1.75)
+      .multiply(formulaConfig.globalMultiplier);
   },
   xagytes: {
     xagoraDertoints: (mergedPlayer) =>

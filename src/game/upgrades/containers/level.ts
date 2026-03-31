@@ -19,31 +19,31 @@ const levelUpgrades = createUpgradeDataContainer({
     {
       id: "level_2",
       description:
-        "Generates Total Dertoints equal to 0.01% of Total Dertoints you could gain per second, and keeps 3-4 Dertoint Upgrades and Mallirt Upgrade 2",
+        "Generates Total Dertoints equal to 0.001% of Total Dertoints you could gain per second, and keeps 3-4 Dertoint Upgrades and Mallirt Upgrade 2",
       cost: 1e28,
     },
     {
       id: "level_3",
       description:
-        "Generates Total Dertoints equal to 0.1% of Total Dertoints you could gain per second and keeps Mallirt Upgrade 3",
+        "Generates Total Dertoints equal to 0.01% of Total Dertoints you could gain per second and keeps Mallirt Upgrade 3",
       cost: 2.78e32,
     },
     {
       id: "level_4",
       description:
-        "Unlocks Amplivoid, generates Total Dertoints equal to 1% of Total Dertoints you could gain per second, and keeps Mallirt Upgrade 4",
+        "Unlocks Amplivoid, generates Total Dertoints equal to 0.1% of Total Dertoints you could gain per second, and keeps Mallirt Upgrade 4",
       cost: 5.065e92,
     },
     {
       id: "level_5",
       description:
-        "Raises Nullith Reset's Point effect to the power of 1.1, generates Total Dertoints equal to 10% of Total Dertoints you could gain per second, and prevents Amplivoid Upgrade from spending Amplivoid",
+        "Raises Nullith Reset's Point effect to the power of 1.1, generates Total Dertoints equal to 1% of Total Dertoints you could gain per second, and prevents Amplivoid Upgrade from spending Amplivoid",
       cost: 4.45e131,
     },
     {
       id: "level_6",
       description:
-        "Raises Nullith Reset's Energy effect to the 10th power, generates Total Dertoints equal to 100% of Total Dertoints you could gain per second and automates Amplivoid Upgrade",
+        "Raises Nullith Reset's Energy effect to the 10th power, generates Total Dertoints equal to 10% of Total Dertoints you could gain per second and automates Amplivoid Upgrade",
       cost: 8.1e154,
     },
   ],

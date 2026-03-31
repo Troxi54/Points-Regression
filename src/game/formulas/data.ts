@@ -9,6 +9,7 @@ import { calculateCurrencyGain } from "@game/currencies/utils/calculate";
 import gameConfig from "@core/config/data";
 import resetResetLayerConfig from "@game/resetLayers/data/layers/reset/config";
 import tierResetLayerConfig from "@game/resetLayers/data/layers/tier/config";
+import formulaConfig from "./config";
 
 const formulas = {
   bestPoints({ player }) {
@@ -114,7 +115,7 @@ const formulas = {
     return xagytes.max(gain);
   },
   xagora() {
-    return createDecimal(1);
+    return createDecimal(1).multiply(formulaConfig.globalMultiplier);
   },
   maxXagyrosStates() {
     return 1;

@@ -11,6 +11,7 @@ import Min from "@ui/components/base/Min";
 import amplivaultConfig from "@game/features/amplivault/config";
 import nuxarConfig from "@game/features/nuxar/config";
 import cappergyConfig from "@game/features/cappergy/config";
+import formulaConfig from "@game/formulas/config";
 
 const menuInfoFormulaContainer: MenuInfoFormulaContainer = [
   {
@@ -376,7 +377,8 @@ const menuInfoFormulaContainer: MenuInfoFormulaContainer = [
           <Log base={formatNumber(1e10)}>
             <Stat>points</Stat> {symbols.divide} {formatNumber(1e250)}
           </Log>
-        </Pow>
+        </Pow>{" "}
+        {symbols.multiply} {formatNumber(formulaConfig.globalMultiplier)}
       </>
     ),
   },
@@ -606,7 +608,8 @@ const menuInfoFormulaContainer: MenuInfoFormulaContainer = [
             </>,
             0.1,
           ]}
-        />
+        />{" "}
+        {symbols.multiply} {formatNumber(formulaConfig.globalMultiplier)}
       </>
     ),
   },
@@ -704,7 +707,8 @@ const menuInfoFormulaContainer: MenuInfoFormulaContainer = [
           <Log base={formatNumber("1e10")}>
             <Stat>ampliflux</Stat> {symbols.divide} {formatNumber("1e1075")}
           </Log>
-        </Pow>
+        </Pow>{" "}
+        {symbols.multiply} {formatNumber(formulaConfig.globalMultiplier)}
       </>
     ),
   },

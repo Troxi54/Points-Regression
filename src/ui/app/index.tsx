@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Menu />
-      <div className="size-full flex-col gap-20 pt-[calc(8vmin+1.5rem)] pb-12">
+      <div className="size-full flex-col gap-20 pt-[calc(8vmin+1.5rem)] pb-12 after-full after:fixed after:z-1 after:bg-main-content-overlay after:pointer-events-none">
         <NormalDimension />
         <SliphDimension />
       </div>

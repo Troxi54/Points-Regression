@@ -2,7 +2,7 @@ import { GameVersion } from "@core/types/version";
 import createDecimal from "@core/utils/decimal";
 
 const gameConfig = {
-  gameName: "Points Progression",
+  gameName: "Points Regression",
   gameVersion: {
     major: 1,
     minor: 1,

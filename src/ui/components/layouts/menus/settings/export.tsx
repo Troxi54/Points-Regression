@@ -20,7 +20,7 @@ const ExportMenu = () => {
     const data = exportPlayer();
 
     const time = new Date();
-    const fileName = `Points Progression ${time
+    const fileName = `Points Regression ${time
       .toLocaleTimeString()
       .replace(/[:]/g, "-")} ${time
       .toLocaleDateString()

@@ -1,5 +1,5 @@
 const playerPersistenceConfig = {
-  localStorageName: "PointsProgression",
+  localStorageName: "PointsRegression",
   autoSaveInterval: 10000,
 } as const;
 

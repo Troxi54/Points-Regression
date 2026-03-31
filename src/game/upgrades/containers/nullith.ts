@@ -18,24 +18,24 @@ const nullithUpgrades = createUpgradeDataContainer({
     {
       id: "nullith_3",
       description:
-        "Keeps Amplivault Level and 5-8 Vermyros upgrades, and generates Cores equal to 0.1% of the Cores you could gain",
+        "Keeps Amplivault Level and 5-8 Vermyros upgrades, and generates Cores equal to 0.01% of the Cores you could gain",
       cost: "1.905e375",
     },
     {
       id: "nullith_4",
       description:
-        "Unlocks Nullifice and offline Nullith Resets, automates Core upgrade, keeps 9-10 Vermyros upgrades, and generates Cores equal to 1% of the Cores you could gain",
+        "Unlocks Nullifice and offline Nullith Resets, automates Core upgrade, keeps 9-10 Vermyros upgrades, and generates Cores equal to 0.1% of the Cores you could gain",
       cost: "9.064e435",
     },
     {
       id: "nullith_5",
-      description: `Unlocks Sliph, enables passive Nullith Reset generation, removes Auto Nullith toggle, and generates Cores equal to 10% of the Cores you could gain`,
+      description: `Unlocks Sliph, enables passive Nullith Reset generation, removes Auto Nullith toggle, and generates Cores equal to 1% of the Cores you could gain`,
       cost: "1e1000",
     },
     {
       id: "nullith_6",
       description:
-        "Unlocks Nuxar, generates Cores equal to 100% of the Cores you could gain, and removes Core button",
+        "Unlocks Nuxar, generates Cores equal to 10% of the Cores you could gain, and removes Core button",
       cost: "1e1150",
     },
     {
