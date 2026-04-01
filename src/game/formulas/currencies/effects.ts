@@ -178,11 +178,7 @@ const currencyEffectFormulas: EffectFormulaContainer = {
       .multiply(formulaConfig.globalMultiplier);
   },
   amplivoid({ player: { amplivoid } }) {
-    return amplivoid
-      .max(0)
-      .plus(1)
-      .pow(1.75)
-      .multiply(formulaConfig.globalMultiplier);
+    return amplivoid.max(0).plus(1).pow(1.75);
   },
   xagytes: {
     xagoraDertoints: (mergedPlayer) =>

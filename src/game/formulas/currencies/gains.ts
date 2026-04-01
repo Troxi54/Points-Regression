@@ -234,10 +234,9 @@ const currencyGainFormulas: GainFormulaContainer = {
   },
   amplivoid: {
     gain({ player: { ampliflux }, cachedPlayer }) {
-      return Decimal.pow(
-        1.6,
-        ampliflux.dividedBy("1e1075").max(1).log(1e10),
-      ).multiply(cachedPlayer.amplivaultAmplivoidEffect);
+      return Decimal.pow(1.6, ampliflux.dividedBy("1e1075").max(1).log(1e10))
+        .multiply(cachedPlayer.amplivaultAmplivoidEffect)
+        .multiply(formulaConfig.globalMultiplier);
     },
   },
   xagytes(mergedPlayer) {
