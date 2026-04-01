@@ -1,6 +1,6 @@
-# Points Progression
+# Points Regression
 
-Source code for the incremental game Points Progression.
+Source code for the Points Regression mod for Points Progression.
 
 ## Tech Stack
 
@@ -16,8 +16,8 @@ Source code for the incremental game Points Progression.
 ## Getting Started
 
 ```bash
-git clone https://github.com/Troxi54/Points-Progression.git
-cd Points-Progression
+git clone https://github.com/Troxi54/Points-Regression.git
+cd Points-Regression
 npm install
 npm run dev
 ```

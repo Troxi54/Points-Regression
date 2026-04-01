@@ -54,7 +54,7 @@ function MenuInfoMainPage() {
 
         <LinkButton
           name="GitHub repository"
-          link="https://github.com/Troxi54/Points-Progression"
+          link="https://github.com/Troxi54/Points-Regression"
           className="menu-button bg-github hover:bg-github-hover"
         >
           <p>GitHub</p>
